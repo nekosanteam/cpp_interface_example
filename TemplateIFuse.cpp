@@ -1,4 +1,5 @@
 #include "TemplateIF.h"
+#include "TemplateIFimpl.h"
 #include <iostream>
 
 using std::cout;
@@ -8,8 +9,7 @@ int main(void)
 {
     work::TemplateIF impl;
     cout << "sizeof(impl) " << sizeof(impl) << endl;
-    impl.operate1(0);
-    impl.operate2(0);
+    impl.call(0);
 
     return 0;
 }

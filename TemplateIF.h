@@ -4,7 +4,7 @@
 namespace work {
 
 template <typename T>
-class TemplateIFTmpl : private T {
+class TemplateIFtmpl : private T {
 public:
     inline void operate1(int arg) {
         T::operate1(arg);
@@ -14,15 +14,15 @@ public:
         T::operate2(arg);
         return;
     }
+    inline void call(int arg) {
+        this->operate1(arg);
+        this->operate2(arg);
+        return;
+    }
 };
 
-class TemplateIFImpl {
-public:
-    void operate1(int arg);
-    void operate2(int arg);
-};
-
-using TemplateIF = TemplateIFTmpl<TemplateIFImpl>;
+class TemplateIFimpl;
+using TemplateIF = TemplateIFtmpl<TemplateIFimpl>;
 
 }
 
