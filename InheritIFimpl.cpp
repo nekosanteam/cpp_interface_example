@@ -29,8 +29,8 @@ double InheritIFimpl::getValue(int index)
 void InheritIFimpl::setValue(int index, double arg)
 {
     (void)index;
-    cout << "InheritIFimpl::setValue()" << endl;
     (void)arg;
+    cout << "InheritIFimpl::setValue()" << endl;
 }
 
 } // namespace work
