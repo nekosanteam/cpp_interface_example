@@ -13,9 +13,11 @@
 ## オブジェクト指向C++ API の例
 
 - InheritIF.h
-- InheritIFimpl.h
+- InheritIFimpl.hpp
 - InheritIFimpl.cpp
-- InheritIFuse.cpp
+- InheritIFuser.hpp
+- InheritIFuser.cpp
+- InheritIFmain.cpp
 
 InheritIF.h に定義した抽象クラスを、InheritIFimpl.h で継承して定義し、オーバーライドしたメソッド関数を InheritIFimpl.cpp で定義しています。
 
@@ -23,7 +25,8 @@ InheritIF.h で定義したクラスを使う側では、参照またはポイ�
 
 InheritIF.h で定義したクラスのインスタンスを生成するには、InheritIFimpl.h をインクルードしてそのコンストラクタを呼び出す必要があります。
 
-今回の例では InheritIFuse.cpp に両方記載していますが、当然ながら生成と利用は密結合すべきではなく、実際に別ソースコードファイルに分けることができます。
+今回の例では InheritIFuser.cpp に使う側、InheritIFmain.cpp に生成する側を記載しています。
+一つのコードにまとめることもできますが、一般的に生成と利用は密結合すべきではないと思われます。
 
 InheritIF.h のI/Fで提供されるクラスの振る舞いは、サブクラスを定義するだけで自由に変更・追加可能です。
 

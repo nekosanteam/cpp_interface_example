@@ -1,17 +1,15 @@
-#include "InheritIFimpl.h"
-#include <iostream>
+#include "InheritIFimpl.hpp"
 
-using std::cout;
-using std::endl;
+#include <iostream>
+#include <array>
 
 namespace work {
 
-// 本来このデストラクタは InheritIF の利用者側が合わせて定義しておくべき。
-InheritIF::~InheritIF()
-{
-}
+using std::cout;
+using std::endl;
+using std::array;
 
-InheritIFimpl::InheritIFimpl()
+InheritIFimpl::InheritIFimpl() : mem_()
 {
 }
 

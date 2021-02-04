@@ -4,11 +4,13 @@
 
 using std::cout;
 using std::endl;
+using work::TemplateIF;
 
 int main(void)
 {
-    work::TemplateIF impl;
+    TemplateIF impl;
     cout << "sizeof(impl) " << sizeof(impl) << endl;
+    impl.call(0);
     impl.call(0);
 
     return 0;

@@ -10,6 +10,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 PROJECT(IFimpl CXX)
 ENABLE_LANGUAGE(C)
 
-add_executable(InheritIFuse  InheritIFimpl.cpp  InheritIFuse.cpp)
+add_executable(InheritIFmain InheritIFimpl.cpp  InheritIFuser.cpp InheritIFmain.cpp)
 add_executable(TemplateIFuse TemplateIFimpl.cpp TemplateIFuse.cpp)
 add_executable(StubIFuse     StubIF.cpp StubIFuse.cpp)
