@@ -14,7 +14,7 @@ public:
     void setValue(int index, double arg) override;
 
 private:
-    std::array<double, 16> mem_;
+    std::array<double, 1> mem_;
 };
 
 } // namespace work

@@ -5,7 +5,7 @@ namespace work {
 
 class StubIF {
 public:
-    void process1(int arg);
+    static void process1(int arg);
     void process2(int arg);
 };
 

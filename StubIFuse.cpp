@@ -1,9 +1,16 @@
 #include "StubIF.h"
+#include <iostream>
+
+using std::cout;
+using std::endl;
+using work::StubIF;
 
 int main(void)
 {
-    work::StubIF iface;
+    StubIF impl;
 
-    iface.process1(0);
-    iface.process2(0);
+    cout << "sizeof(impl) " << sizeof(impl) << endl;
+    StubIF::process1(0);
+    impl.process1(0);
+    impl.process2(0);
 }
