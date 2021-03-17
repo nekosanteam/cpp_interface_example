@@ -59,3 +59,14 @@ TemplateIF.h で定義したクラスのインスタンスを生成するには�
 ただし、この実装では TemplateIF.h のテンプレートパラメータに渡す基底クラスを変更・追加することで、TemplateIF.h の先の動作を変更・追加することができます。
 
 また inline 関数でコンパイル時に直接基底クラスのメソッド関数を呼び出すような最適化ができます。
+
+##  参考：arm64  クロスコンパイル
+
+```
+  mkdir build_arm64; cd build_arm64
+  cmake -DCMAKE_TOOLCHAIN_FILE=../arm64-linux.cmake ..
+  export QEMU_LD_PREFIX=/usr/aarch64-linux-gnu/
+  00_Stub/StubIFuse
+  01_Inherit/InheritIFmain
+  02_Template/TemplateIFuse
+```
