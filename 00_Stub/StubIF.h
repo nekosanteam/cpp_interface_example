@@ -7,6 +7,9 @@ class StubIF {
 public:
     static void process1(int arg);
     void process2(int arg);
+
+private:
+    static int  memory[16];
 };
 
 }

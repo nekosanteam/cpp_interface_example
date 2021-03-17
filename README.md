@@ -10,7 +10,19 @@
 
 上記、4つのAPIのスタイルのうち、オブジェクト指向C++ API と　テンプレートベースの API について実装したサンプルです。（フラットC API の実装は自明と思われます。逆にデータ駆動API は単純な例示が難しく、また性能上選択肢に登りにくいと考えています。）
 
-## オブジェクト指向C++ API の例
+## 00_Stub: クラス定義とメソッド定義を分けただけ（スタブ定義）
+
+- StubIF.h
+- StubIF.cpp
+- StubIFuse.cpp
+
+StubIF.h に定義したクラスの、メソッド関数を StubIF.cpp に定義しています。StubIFuse.cpp は StubIF.h を直接生成し、利用します。
+
+この例では、StubIFuse.cpp から StubIF.h、StubIF.cpp には強い結合があります。StubIFuse.cpp のテストをするときに StubIF.h, StubIF.cpp の動きを変更するにはインクルード・リンクするファイルを別の実体にすげ替える必要があります。
+
+フラットC API でのI/F提供でも、同様の課題があります。
+
+## 01_Inherit: オブジェクト指向C++ API の例
 
 - InheritIF.h
 - InheritIFimpl.hpp
@@ -30,7 +42,7 @@ InheritIF.h で定義したクラスのインスタンスを生成するには�
 
 InheritIF.h のI/Fで提供されるクラスの振る舞いは、サブクラスを定義するだけで自由に変更・追加可能です。
 
-## テンプレートベースの API
+## 02_Template: テンプレートベースの API
 
 - TemplateIF.h
 - TemplateIFimpl.h
@@ -47,15 +59,3 @@ TemplateIF.h で定義したクラスのインスタンスを生成するには�
 ただし、この実装では TemplateIF.h のテンプレートパラメータに渡す基底クラスを変更・追加することで、TemplateIF.h の先の動作を変更・追加することができます。
 
 また inline 関数でコンパイル時に直接基底クラスのメソッド関数を呼び出すような最適化ができます。
-
-## 参考：クラス定義とメソッド定義を分けただけ（スタブ定義）
-
-- StubIF.h
-- StubIF.cpp
-- StubIFuse.cpp
-
-StubIF.h に定義したクラスの、メソッド関数を StubIF.cpp に定義しています。StubIFuse.cpp は StubIF.h を直接生成し、利用します。
-
-この例では、StubIFuse.cpp から StubIF.h、StubIF.cpp には強い結合があります。StubIFuse.cpp のテストをするときに StubIF.h, StubIF.cpp の動きを変更するにはインクルード・リンクするファイルを別の実体にすげ替える必要があります。
-
-フラットC API でのI/F提供でも、同様の課題があります。
