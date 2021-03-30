@@ -17,6 +17,7 @@
 - StubIFuse.cpp
 
 StubIF.h に定義したクラスの、メソッド関数を StubIF.cpp に定義しています。StubIFuse.cpp は StubIF.h を直接生成し、利用します。
+複数のクラスにまたがる場合に対処療法的に friend でアクセスさせることも可能です。
 
 この例では、StubIFuse.cpp から StubIF.h、StubIF.cpp には強い結合があります。StubIFuse.cpp のテストをするときに StubIF.h, StubIF.cpp の動きを変更するにはインクルード・リンクするファイルを別の実体にすげ替える必要があります。
 

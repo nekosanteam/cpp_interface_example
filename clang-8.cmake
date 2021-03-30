@@ -1,0 +1,5 @@
+set(CMAKE_C_COMPILER   "clang-8")
+set(CMAKE_CXX_COMPILER "clang++-8")
+set(CMAKE_ASM_COMPILER "clang-8")
+set(CMAKE_C_LINKER     "clang-8")
+set(CMAKE_CXX_LINKER   "clang++-8")

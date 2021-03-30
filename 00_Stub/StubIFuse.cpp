@@ -9,10 +9,14 @@ StubIF impl2;
 
 int main(void)
 {
-    StubIF impl;
+    StubIF impl1;
+    StubIF* impl3 = nullptr;
 
-    cout << "sizeof(impl) " << sizeof(impl) << endl;
-    StubIF::process1(0);
-    impl.process1(0);
-    impl2.process2(0);
+    cout << "sizeof(impl) " << sizeof(impl1) << endl;
+    StubIF::process1(1);
+    impl1.process1(2);
+    impl2.process2(3);
+    impl3->process1(4);
+    impl3->memory[0] = 1;
+    StubIFprocess1(5);
 }

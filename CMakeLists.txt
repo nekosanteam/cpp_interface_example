@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD   14)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(CMAKE_C_FLAGS   "-Wall -Wextra -O2 ")
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Weffc++ -Wabi=2 -O2 ")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Weffc++ -O2 ")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 PROJECT(IFimpl CXX)
 ENABLE_LANGUAGE(C)
